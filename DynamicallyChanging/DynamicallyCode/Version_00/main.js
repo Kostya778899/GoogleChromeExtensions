@@ -1,3 +1,8 @@
+function RemoveTags(parent, tag) {
+	parent.querySelectorAll($".{tag}").forEach(element => element.classList.remove(tag));
+}
+
+
 alert("Main worck.");
 
-document.getElementsByClassName("notranslate").forEach(element => element.classList.remove("notranslate"));
+document.querySelectorAll(".notranslate").forEach(element => element.classList.remove("notranslate"));
