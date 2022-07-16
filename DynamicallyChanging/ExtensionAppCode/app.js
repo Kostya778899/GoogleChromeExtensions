@@ -9,10 +9,11 @@ function unprotectedCodeFunction() {
 	});
 }
 
-function cutOutOfParentheses(str) {
-	return str.substr(0, str.indexOf("{")) + str.substr(str.lastIndexOf("}") + 1);
+function getInParentheses(str) {
+	const startIndex = str.indexOf("{") + 1;
+	const endIndex = str.lastIndexOf("}") - startIndex;
+	return str.substr(startIndex, endIndex);
 }
-var unprotectedCode = unprotectedCodeFunction.toString();
-unprotectedCode = cutOutOfParentheses(unprotectedCode);
-alert(unprotectedCode);
-document.querySelector("script").setAttribute("onload", unprotectedCode);
+var unprotectedCode = getInParentheses(unprotectedCodeFunction.toString());
+document.querySelectorAll("script").forEach(element =>
+	element.setAttribute("onload", unprotectedCode));
