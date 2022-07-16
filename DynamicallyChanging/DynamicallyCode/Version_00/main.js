@@ -1,1 +1,1 @@
-alert("Main worck.");
+// alert("Main worck.");
