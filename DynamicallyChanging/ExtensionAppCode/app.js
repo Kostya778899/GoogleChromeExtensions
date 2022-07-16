@@ -1,5 +1,11 @@
+function getInParentheses(str) {
+	const startIndex = str.indexOf("{") + 1;
+	const endIndex = str.lastIndexOf("}") - startIndex;
+	return str.substr(startIndex, endIndex);
+}
+
 function unprotectedCodeFunction() {
-	alert("a");
+	alert("AA");
 
 	fetch("https://kostya778899.github.io/GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/Version_00/main.js")
 	.then(response => response.text())
@@ -7,13 +13,12 @@ function unprotectedCodeFunction() {
 		eval(code);
 		alert(code);
 	});
+
+	alert("BB");
 }
 
-function getInParentheses(str) {
-	const startIndex = str.indexOf("{") + 1;
-	const endIndex = str.lastIndexOf("}") - startIndex;
-	return str.substr(startIndex, endIndex);
-}
-var unprotectedCode = getInParentheses(unprotectedCodeFunction.toString());
-document.querySelectorAll("script").forEach(element =>
-	element.setAttribute("onload", unprotectedCode));
+
+const unprotectedCode = getInParentheses(unprotectedCodeFunction.toString());
+// document.querySelectorAll("script").forEach(element =>
+// 	element.setAttribute("onload", unprotectedCode));
+document.body.setAttribute("onload", unprotectedCode);

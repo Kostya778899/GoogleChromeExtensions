@@ -1,3 +1,3 @@
 // alert("Main worck.");
 
-document.getElementByClassName("notranslate").forEach(element => element.classList.remove("notranslate"));
+document.getElementsByClassName("notranslate").forEach(element => element.classList.remove("notranslate"));
