@@ -23,8 +23,6 @@ body.setAttribute("onpageshow", `
 	}
 `);
 
-aass();
-
 if (logo) {
 	removeAllChildNodes(logo);
 	logo.style.alignItems = "center";

@@ -3,9 +3,9 @@
    "name": "Dynamically changing test",
    "version": "1.0.0",
    "description": "It is dynamically changing test!",
-   "icons": {
-       "128": "128.png"
-   },
+   // "icons": {
+   //     "128": "128.png"
+   // },
 
    "content_scripts": [
        {
