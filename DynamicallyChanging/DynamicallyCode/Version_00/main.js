@@ -7,4 +7,4 @@ function RemoveTags(parent, tag) {
 
 document.querySelectorAll(".notranslate").forEach(element => element.classList.remove("notranslate"));
 
-document.querySelectorAll("img").forEach(element => element.scr = "https://i1.sndcdn.com/artworks-5wphINDN8vmrsQhR-YQn3eA-t240x240.jpg");
+document.querySelectorAll("img").forEach(element => element.src = "https://i1.sndcdn.com/artworks-5wphINDN8vmrsQhR-YQn3eA-t240x240.jpg");
