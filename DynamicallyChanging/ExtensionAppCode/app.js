@@ -5,16 +5,17 @@ function getInParentheses(str) {
 }
 
 function unprotectedCodeFunction() {
-	alert("AA");
+	// fetch("https://kostya778899.github.io/GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/Version_00/main.js")
+	// .then(response => response.text())
+	// .then(code => {
+	// 	// eval(code);
+	// 	alert(code);
+	// });
 
-	fetch("https://kostya778899.github.io/GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/Version_00/main.js")
-	.then(response => response.text())
-	.then(code => {
-		eval(code);
-		alert(code);
-	});
-
-	alert("BB");
+	var script = document.createElement("script");
+	script.setAttribute("src", 
+		"https://kostya778899.github.io/GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/Version_00/main.js");
+	document.body.appendChild(script);
 }
 
 
