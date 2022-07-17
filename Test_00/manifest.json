@@ -1,16 +1,16 @@
 {
    "manifest_version": 3,
-   "name": "Mail link healer",
+   "name": "Budlby",
    "version": "1.0.0",
-   "description": "Ссылка «Входящие» и «Написать письмо» снова открываются в той же вкладке!",
+   "description": "No youtube, it's Budlby!",
    "icons": {
-       "128": "128.png"
+       "128": "images/icons/128.png"
    },
 
    "content_scripts": [
        {
            "matches": [ "<all_urls>" ],
-           "js": [ "app.js" ]
+           "js": [ "app.js", "logo_scr.js" ]
        }
    ],
 
