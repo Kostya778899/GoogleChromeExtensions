@@ -1,7 +1,6 @@
 function unprotectedCodeFunction() {
 	const dynamicallyCodeFileUrl = `https://kostya778899.github.io/
-		GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/
-		Version_00/main.js`;
+		GoogleChromeExtensions/YT_improver/DynamicallyCode/Version_00/main.js`;
 
 	var i = 0;
 	function tryStartDynamicallyCode(onSuccess) {
