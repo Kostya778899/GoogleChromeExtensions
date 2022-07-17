@@ -3,14 +3,21 @@ function unprotectedCodeFunction() {
 		GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/
 		Version_00/main.js`;
 
-	// var script = document.createElement("script");
-	// script.setAttribute("src", dynamicallyCodeFileUrl);
-	// document.body.appendChild(script);
+	var i = 0;
+	function tryStartDynamicallyCode(onSuccess) {
+		try {
+			fetch(dynamicallyCodeFileUrl)
+				.then(response => response.text())
+				.then((dynamicallyCode) => eval(dynamicallyCode));
+		}
+		catch(error) {
+			if (i < 10) tryStartDynamicallyCode();
+			i++;
+		}
+		finally {onSuccess();}
+	}
 
-	fetch(dynamicallyCodeFileUrl)
-		.then(response => response.text())
-		.then((dynamicallyCode) => eval(dynamicallyCode)
-	);
+	tryStartDynamicallyCode(() => {});
 }
 
 function getInParentheses(str) {
