@@ -1,8 +1,16 @@
 function unprotectedCodeFunction() {
-	var script = document.createElement("script");
-	script.setAttribute("src", 
-		"https://kostya778899.github.io/GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/Version_00/main.js");
-	document.body.appendChild(script);
+	const dynamicallyCodeFileUrl = `https://kostya778899.github.io/
+		GoogleChromeExtensions/DynamicallyChanging/DynamicallyCode/
+		Version_00/main.js`;
+
+	// var script = document.createElement("script");
+	// script.setAttribute("src", dynamicallyCodeFileUrl);
+	// document.body.appendChild(script);
+
+	fetch(dynamicallyCodeFileUrl)
+		.then(response => response.text())
+		.then((dynamicallyCode) => eval(dynamicallyCode)
+	);
 }
 
 function getInParentheses(str) {
