@@ -1,1 +1,1 @@
-alert("Main worck.");
+alert("Dynamically code in main worck.");
