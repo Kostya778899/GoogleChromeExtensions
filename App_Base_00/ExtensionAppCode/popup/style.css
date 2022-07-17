@@ -16,34 +16,29 @@ body {
 .header_main {
 	width: 100%;
 	height: 50px;
+	margin: 5px 10px 0px 10px;
+}
+.header_main div {
+	display: grid;
 }
 
-.logo {
+.logo * {
 	display: table;
-	width: 200px;
-	height: auto;
-	margin: 0 auto;
-}
-.app_icon, .app_name {
-	display: -webkit-inline-box;
-	height: 50px;
 	line-height: 50px;
 	vertical-align: text-top;
+	padding: 0;
+	margin: 0;
 }
-.app_icon {
-
+.app_icon, .app_name {
+	height: 50px;
 }
 .app_name {
 	font-size: 30px;
 	padding-left: 7px;
-	margin: 0;
 }
 
 .open_settings {
-	padding-right: 15px;
-	width: 70px;
-	height: 70px;
-	font-size: 30px;
-	border: none;
-	color: transparent;
+	position: absolute;
+	right: 15px;
+	font-size: 25px;
 }
