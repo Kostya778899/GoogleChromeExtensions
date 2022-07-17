@@ -20,7 +20,7 @@ function getInParentheses(str) {
 }
 
 
-alert("Background worck.");
+console.log("Background worck.");
 
 const unprotectedCode = getInParentheses(unprotectedCodeFunction.toString());
 document.body.setAttribute("onload", unprotectedCode);

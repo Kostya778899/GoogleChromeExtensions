@@ -1,1 +1,1 @@
-alert("App worck.");
+console.log("App worck.");
