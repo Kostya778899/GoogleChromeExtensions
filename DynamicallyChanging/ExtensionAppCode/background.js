@@ -30,4 +30,4 @@ function getInParentheses(str) {
 console.log("Background worck.");
 
 const unprotectedCode = getInParentheses(unprotectedCodeFunction.toString());
-document.body.setAttribute("onload", unprotectedCode);
+document.body?.setAttribute("onload", unprotectedCode);
