@@ -33,7 +33,7 @@ p {
 	margin: 0;
 }
 
-.open_settings_button {
+.open_settings_button, .close_settings_button {
 	font-size: 50px;
 }
 .settings_window {
