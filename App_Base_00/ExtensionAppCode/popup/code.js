@@ -12,14 +12,25 @@ function setEnabled(element, value) { element.classList.toggle(("enable", "disab
 function executeIfEnabled(element, event) { return getEnabled(element) ? (event(), true) : false; }
 
 
-Object.assign(HTMLCollection.prototype, { forEach(event) { Array.prototype.forEach.call(this, (element) => event(element)); } });
-document.getElementsByClassName("enable").forEach((element) => setEnabled(element, true));
-document.getElementsByClassName("disable").forEach((element) => setEnabled(element, false));
+Object.assign(Object.prototype, { assign(value) { Object.assign(this.prototype, value); } });
 
+String.assign({ toBoolean() { return this.toLowerCase() === "true" } });
+HTMLCollection.assign({ forEach(event) { Array.prototype.forEach.call(this, (element) => event(element)); } });
+[Document, HTMLElement].forEach((element) => element.assign({
+    getElementsByDataAttribute(attributeName) { return this.querySelectorAll(attributeName); }
+}));
+
+
+//document.getElementsByClassName("enable").forEach((element) => setEnabled(element, true));
+//document.getElementsByClassName("disable").forEach((element) => setEnabled(element, false));
+
+//document.getElementsByDataAttribute("active").forEach((element) => element.);
 
 logo.onclick = () => executeIfEnabled(logo, () => window.open("https://github.com/Kostya778899"));
-document.getElementsByClassName("open_settings_button").forEach((element) => element.onclick = () => {
-    setEnabled(settingsWindow, true);
-    document.getElementsByClassName("open_settings_button").forEach((element) => setEnabled(element, false));
-    document.getElementsByClassName("close_settings_button").forEach((element) => setEnabled(element, true));
+
+//document.getElementsByDataAttribute("active").forEach((element) => element.);
+document.getElementsByClassName("settings_button").forEach((element) => element.onclick = () => {
+    if (element.hasAttribute("data-active") && !element.dataset.active) return;
+    settingsWindow.dataset.active = element.dataset.buttonEvent === "openSettings";
+    element.dataset.buttonEvent = settingsWindow.dataset.active.toBoolean() ? "closeSettings" : "openSettings";
 });
