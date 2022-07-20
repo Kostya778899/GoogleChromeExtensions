@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "App base (test)",
+  "version": "1.0.0",
+  "description": "It is app base test.",
+  //"icons": { "128": "/images/app_icon/128.png" },
+
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "unlimitedStorage"
+  ],
+  "optional_permissions": [
+    "unlimitedStorage"
+  ],
+  "host_permissions": [ "<all_urls>" ]
+}

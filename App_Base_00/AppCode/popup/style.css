@@ -18,7 +18,7 @@ body {
 }
 
 p {
-	margin: 0;
+	/*margin: 0;*/
 }
 
 .enable {
@@ -42,12 +42,13 @@ p {
 .settings_button[data-button-event="openSettings"] {
 	color: blue;
 }
-	.settings_button[data-button-event="closeSettings"] {
-		color: red;
-	}
+.settings_button[data-button-event="closeSettings"] {
+	color: red;
+
+}
 
 #settings_window {
-	transition: all 2s;
+	transition: all 0.2s;
 }
 
 [data-active="true"] {

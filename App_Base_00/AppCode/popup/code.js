@@ -34,3 +34,7 @@ document.getElementsByClassName("settings_button").forEach((element) => element.
     settingsWindow.dataset.active = element.dataset.buttonEvent === "openSettings";
     element.dataset.buttonEvent = settingsWindow.dataset.active.toBoolean() ? "closeSettings" : "openSettings";
 });
+
+
+const poi = document.getElementById("POI");
+document.getElementById("POO").querySelectorAll("code").forEach((element) => poi.textContent += element.textContent);
