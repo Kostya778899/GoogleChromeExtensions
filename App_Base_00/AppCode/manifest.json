@@ -3,7 +3,7 @@
   "name": "App base (test)",
   "version": "1.0.0",
   "description": "It is app base test.",
-  //"icons": {"128": "/images/app_icon/128.png"},
+  "icons": { "128": "/images/app_icon/128.png" },
 
   "action": {
     "default_popup": "/popup/index.html",
@@ -23,7 +23,11 @@
     "clipboardWrite", //---
     "scripting"
   ],
-  "host_permissions": [ "<all_urls>" ]
+  "host_permissions": [ "<all_urls>" ],
+
+  "sandbox": {
+    "pages": [ "background.js" ]
+  }
 }
 
 

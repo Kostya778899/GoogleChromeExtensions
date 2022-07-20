@@ -33,3 +33,30 @@
 
 
 console.log("Background worck.");
+
+
+var templates = [];
+templates['hello'] = `alert("WWWorga!")`;
+
+window.addEventListener('message', function (event) {
+    var command = event.data.command;
+    var name = event.data.name || 'hello';
+    switch (command) {
+        case 'render':
+            event.source.postMessage({
+                name: name,
+                html: templates[name](event.data.context)
+            }, event.origin);
+            break;
+        //case 'somethingElse':
+    }
+});
+
+chrome.browserAction.onClicked.addListener(function () {
+    var iframe = document.getElementById('theFrame');
+    var message = {
+        command: 'render',
+        context: { thing: 'world' }
+    };
+    iframe.contentWindow.postMessage(message, '*');
+});
