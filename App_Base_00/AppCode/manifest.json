@@ -5,6 +5,26 @@
   "description": "It is app base test.",
   "icons": { "128": "/images/app_icon/128.png" },
 
+  "content_security_policy": {
+    //"script-src 'self' 'unsafe-eval'; object-src 'self';"
+
+    //"script-src": [ "self", "wasm-unsafe-eval" ],
+    //"object-src": [ "self", "unsafe-eval" ]
+
+    //"extension_pages": "script-src 'self' 'wasm-eval'; object-src 'self'"
+
+    "script-src": "unsafe-eval"
+
+    //"default-src": "unsafe-eval"
+
+    //"script-src 'self'; object-src 'none'"
+
+  },
+  //"content_security_policy": {
+  //  "extension_pages": "self",
+  //  "sandbox": "self"
+  //},
+
   "action": {
     "default_popup": "/popup/index.html",
     "default_icon": { "128": "/images/app_icon/128.png" }
@@ -25,7 +45,7 @@
   ],
 
   "sandbox": {
-    "pages": [ "background.html" ]
+    "pages": [ "sandbox.html" ]
   },
 
   "permissions": [

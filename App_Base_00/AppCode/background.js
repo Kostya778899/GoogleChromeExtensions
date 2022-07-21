@@ -34,25 +34,12 @@
 
 console.log("Background worck.");
 
-var div = document.createElement('iframe');
+eval(`alert("LOLLI!")`);
+//var div = document.createElement('iframe');
+////div.src = 'sandbox.html';
 //div.src = 'sandbox.html';
-div.src = chrome.runtime.getURL('sandbox.html');
-div.id = 'sandbox';
-div.style = 'display: none';
-//var div = document.createElement('div');
-//div.innerHTML = `<script>alert('LOL!');</script>`;
-document.body.appendChild(div);
-
-//window.addEventListener('message', async function (event) {
-//    event.source.window.postMessage(eval(event.data), event.origin);
-//});
-
-////const iframe = document.getElementById('sandbox');
-////alert('AA');
-////window.addEventListener('message', (event) => {
-////    //console.log('EVAL output', event.data);
-////    alert('EVAL output' + event.data);
-////});
-//setTimeout(() => {
-//    iframe.contentWindow.postMessage(`alert('LOLV');`, '*');
-//}, 100);
+//div.id = 'sandbox';
+//div.style = 'display: none';
+////var div = document.createElement('div');
+////div.innerHTML = `<script>alert('LOL!');</script>`;
+//document.body.appendChild(div);
