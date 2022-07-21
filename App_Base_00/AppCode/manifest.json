@@ -17,17 +17,24 @@
     }
   ],
 
+  "web_accessible_resources": [
+    {
+      "matches": [ "<all_urls>" ],
+      "resources": [ "background.js", "topbar.html" ]
+    }
+  ],
+
+  "sandbox": {
+    "pages": [ "background.html" ]
+  },
+
   "permissions": [
     "tabs",
     "background",
     "clipboardWrite", //---
     "scripting"
   ],
-  "host_permissions": [ "<all_urls>" ],
-
-  "sandbox": {
-    "pages": [ "background.js" ]
-  }
+  "host_permissions": [ "<all_urls>" ]
 }
 
 

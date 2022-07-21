@@ -34,29 +34,25 @@
 
 console.log("Background worck.");
 
+var div = document.createElement('iframe');
+//div.src = 'sandbox.html';
+div.src = chrome.runtime.getURL('sandbox.html');
+div.id = 'sandbox';
+div.style = 'display: none';
+//var div = document.createElement('div');
+//div.innerHTML = `<script>alert('LOL!');</script>`;
+document.body.appendChild(div);
 
-var templates = [];
-templates['hello'] = `alert("WWWorga!")`;
+//window.addEventListener('message', async function (event) {
+//    event.source.window.postMessage(eval(event.data), event.origin);
+//});
 
-window.addEventListener('message', function (event) {
-    var command = event.data.command;
-    var name = event.data.name || 'hello';
-    switch (command) {
-        case 'render':
-            event.source.postMessage({
-                name: name,
-                html: templates[name](event.data.context)
-            }, event.origin);
-            break;
-        //case 'somethingElse':
-    }
-});
-
-chrome.browserAction.onClicked.addListener(function () {
-    var iframe = document.getElementById('theFrame');
-    var message = {
-        command: 'render',
-        context: { thing: 'world' }
-    };
-    iframe.contentWindow.postMessage(message, '*');
-});
+////const iframe = document.getElementById('sandbox');
+////alert('AA');
+////window.addEventListener('message', (event) => {
+////    //console.log('EVAL output', event.data);
+////    alert('EVAL output' + event.data);
+////});
+//setTimeout(() => {
+//    iframe.contentWindow.postMessage(`alert('LOLV');`, '*');
+//}, 100);
