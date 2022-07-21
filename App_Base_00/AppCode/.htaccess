@@ -1,5 +1,0 @@
-<IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin {linkToDomain}
-Header set Access-Control-Allow-Credentials true
-Header set Content-Security-Policy "default-src 'self' blob: 'unsafe-eval' 'wasm-eval'  {other code ...} ; {other code ...} script-src 'self' 'unsafe-eval' 'wasm-eval' {other code ...};   object-src 'self' 'wasm-eval';{other code ...}"
-</IfModule>
