@@ -5,6 +5,10 @@
   "description": "It is app base test.",
   "icons": { "128": "/images/app_icon/128.png" },
 
+  "content_security_policy": {
+    "object-src": [ "unsafe-eval" ]
+  },
+
   "action": {
     "default_popup": "/popup/index.html",
     "default_icon": { "128": "/images/app_icon/128.png" }
@@ -14,14 +18,14 @@
     {
       "matches": [ "<all_urls>" ],
       "run_at": "document_start",
-      "js": [ "background.js" ] //  , "app.js"
+      "js": [ "background.js", "databaseLoader/main.js" ] //  , "app.js"
     }
   ],
 
   "web_accessible_resources": [
     {
       "matches": [ "<all_urls>" ],
-      "resources": [ "app.js", "topbar.html" ]
+      "resources": [ "/databaseLoader/unsafe.js" ]
     }
   ],
 
