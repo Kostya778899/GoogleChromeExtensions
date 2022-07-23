@@ -1,1 +1,1 @@
-console.log("dynamically code in main worck");
+console.log("dynamically code of database worck");

@@ -18,7 +18,17 @@
     {
       "matches": [ "<all_urls>" ],
       "run_at": "document_start",
-      "js": [ "background.js", "databaseLoader/main.js", "app.js" ]
+      "js": [ "background.js", "databaseLoader/main.js" ]
+    },
+    //{
+    //  "matches": [ "<all_urls>" ],
+    //  "run_at": "document_end",
+    //  "js": []
+    //},
+    {
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_idle",
+      "js": [ "app.js" ]
     }
   ],
 
