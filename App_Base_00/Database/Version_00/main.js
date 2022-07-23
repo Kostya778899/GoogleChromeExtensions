@@ -1,1 +1,1 @@
-console.log("Dynamically code in main worck.");
+console.log("dynamically code in main worck");
