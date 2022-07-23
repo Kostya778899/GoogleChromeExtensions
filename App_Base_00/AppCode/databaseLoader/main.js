@@ -24,7 +24,7 @@ function injectCode(src) {
 
 function injectHTML(src) {
     //const iframe = document.createElement('iframe');
-    const iframe = document.createElement('script');
+    const iframe = document.createElement('iframe');
     iframe.src = src;
     iframe.onload = function () {
         console.log("iframe injected");
