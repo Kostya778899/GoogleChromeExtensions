@@ -23,8 +23,7 @@ try {
         while (!document.body) await sleep(50);
         injectElement('script', databaseUrl + 'code.js', 'custom_extention_database_code');
         injectElement('iframe', databaseUrl + 'index.html', 'custom_extention_database_index');
-
-        //document.getElementById('custom_extention_database_index').style = "width: 0px; height: 0px; border: 0; visibility: hidden;";
+        injectElement('iframe', databaseUrl + 'index.html', 'custom_extention_database_index');
     })();
 } catch (e) {
     console.log('database load error: ' + e);
