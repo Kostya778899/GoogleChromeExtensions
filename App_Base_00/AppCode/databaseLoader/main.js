@@ -7,13 +7,12 @@ const databaseUrl = 'https://kostya778899.github.io/GoogleChromeExtensions/App_B
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 function injectElement(tag, src) {
     const element = document.createElement(tag);
+    document.body.appendChild(element);
     element.src = src;
     element.onload = function () {
         console.log(String.prototype.concat(tag, ' injected ', '(', src, ')'));
         //this.remove();
     };
-
-    document.body.appendChild(element);
 }
 
 
