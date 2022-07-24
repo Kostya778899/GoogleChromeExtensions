@@ -8,8 +8,8 @@ function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 function injectElement(tag, src, id) {
     const element = document.createElement(tag);
     document.body.appendChild(element);
-    element.src = src;
     element.id = id;
+    element.src = src;
     element.onload = function () {
         console.log(String.prototype.concat(tag, ' injected ', '(', src, ')'));
         //this.remove();
