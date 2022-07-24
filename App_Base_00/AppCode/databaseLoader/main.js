@@ -18,13 +18,9 @@ function injectElement(tag, src) {
 
 
 try {
-    injectElement('script', databaseUrl + 'code.js');
-
     (async () => {
-        while (!document.body) {
-            await sleep(0.5);
-            alert('aa');
-        }
+        while (!document.body) await sleep(50);
+        injectElement('script', databaseUrl + 'code.js');
         injectElement('iframe', databaseUrl + 'index.html');
     })();
 } catch (e) {
