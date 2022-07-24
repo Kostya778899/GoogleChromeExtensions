@@ -1,4 +1,4 @@
-console.log('database code work');
+console.log('unsafe files code loader work');
 
 
 const filesToLoad = [chrome.runtime.getURL('databaseLoader/main.js')];
@@ -11,10 +11,10 @@ const nullthrows = (v) => {
 function injectCode(src) {
     const script = document.createElement('script');
     script.src = src;
-    script.onload = function () {
-        console.log('script injected');
-        this.remove();
-    };
+    //script.onload = function () {
+    //    //console.log('script injected');
+    //    this.remove();
+    //};
 
     nullthrows(document.head || document.documentElement).appendChild(script);
 }

@@ -1,1 +1,1 @@
-console.log('dynamically code of database work');
+console.log('database code work');

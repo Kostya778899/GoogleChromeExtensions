@@ -10,12 +10,13 @@ async function injectElement(tag, src) {
     element.src = src;
     element.onload = function () {
         console.log(String.prototype.concat(tag, ' injected ', '(', src, ')'));
-        this.remove();
+        //this.remove();
     };
 
     //document.body.appendChild(element);
     while (!document.body) {
         await sleep(0.5);
+        alert('aa');
     }
     document.body.appendChild(element);
 }
