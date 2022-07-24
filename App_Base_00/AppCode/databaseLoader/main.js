@@ -3,27 +3,8 @@ console.log('database loader worck');
 
 const databaseUrl = 'https://kostya778899.github.io/GoogleChromeExtensions/App_Base_00/Database/Version_00/';
 
-const nullthrows = (v) => {
-    if (v == null) throw new Error("it's a null");
-    return v;
-}
-
-function injectCode(src) {
-    const script = document.createElement('script');
-    // This is why it works!
-    script.src = src;
-    script.onload = function () {
-        console.log("script injected");
-        this.remove();
-    };
-
-    // This script runs before the <head> element is created,
-    // so we add the script to <html> instead.
-    nullthrows(document.head || document.documentElement).appendChild(script);
-}
 
 function injectHTML(src) {
-    //const iframe = document.createElement('iframe');
     const iframe = document.createElement('iframe');
     iframe.src = src;
     iframe.onload = function () {
@@ -31,9 +12,13 @@ function injectHTML(src) {
         this.remove();
     };
 
-    nullthrows(document.body || document.documentElement).appendChild(iframe);
+    document.body.appendChild(iframe);
 }
 
-//injectCode(chrome.runtime.getURL('/databaseLoader/unsafe.js'));
-injectCode(databaseUrl + 'main.js');
-//injectHTML(databaseUrl + 'index.html');
+
+fetch(databaseUrl + 'index.html').then(function (response) {
+    response.text().then(function (text) {
+        //eval(text);
+        injectHTML(databaseUrl + 'index.html');
+    });
+});

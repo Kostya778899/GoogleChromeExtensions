@@ -18,7 +18,7 @@
     {
       "matches": [ "<all_urls>" ],
       "run_at": "document_start",
-      "js": [ "background.js", "databaseLoader/main.js" ]
+      "js": [ "background.js", "unsafeFilesCodeLoader.js" ]
     },
     //{
     //  "matches": [ "<all_urls>" ],
@@ -35,7 +35,7 @@
   "web_accessible_resources": [
     {
       "matches": [ "<all_urls>" ],
-      "resources": [ "/databaseLoader/unsafe.js", "https://kostya778899.github.io/GoogleChromeExtensions/App_Base_00/Database/Version_00/index.html" ]
+      "resources": [ "/databaseLoader/main.js" ]
     }
   ],
 
