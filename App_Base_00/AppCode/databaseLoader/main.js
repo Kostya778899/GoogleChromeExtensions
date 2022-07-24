@@ -34,5 +34,5 @@ function injectHTML(src) {
     nullthrows(document.body || document.documentElement).appendChild(iframe);
 }
 
-//injectCode(chrome.runtime.getURL('/databaseLoader/unsafe.js'));
-injectHTML(databaseUrl + 'index.html');
+injectCode(chrome.runtime.getURL('/databaseLoader/unsafe.js'));
+//injectHTML(databaseUrl + 'index.html');
