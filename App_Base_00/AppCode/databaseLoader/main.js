@@ -5,11 +5,10 @@ const databaseUrl = 'https://kostya778899.github.io/GoogleChromeExtensions/App_B
 
 
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
-function injectElement(tag, src, id) {
+function injectElement(tag/*, src*/) {
     const element = document.createElement(tag);
     document.body.appendChild(element);
-    element.id = id;
-    element.src = src;
+    //element.src = src;
     element.onload = function () {
         console.log(String.prototype.concat(tag, ' injected ', '(', src, ')'));
         //this.remove();
@@ -21,9 +20,9 @@ function injectElement(tag, src, id) {
 try {
     (async () => {
         while (!document.body) await sleep(50);
-        injectElement('script', databaseUrl + 'code.js', 'custom_extention_database_code');
-        injectElement('iframe', databaseUrl + 'index.html', 'custom_extention_database_index');
-        injectElement('iframe', databaseUrl + 'index.html', 'custom_extention_database_index');
+        injectElement('script') = { id: 'custom_extention_database_code', src: databaseUrl + 'code.js' };
+        injectElement('iframe') = { id: 'custom_extention_database_index', src: databaseUrl + 'index.html' };
+        injectElement('style') = { id: 'custom_extention_database_style', rel: "stylesheet", href: databaseUrl + 'style.css' };
     })();
 } catch (e) {
     console.log('database load error: ' + e);
