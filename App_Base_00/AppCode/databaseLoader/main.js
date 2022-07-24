@@ -1,4 +1,4 @@
-console.log('database loader worck');
+console.log('database loader work');
 
 
 const databaseUrl = 'https://kostya778899.github.io/GoogleChromeExtensions/App_Base_00/Database/Version_00/';

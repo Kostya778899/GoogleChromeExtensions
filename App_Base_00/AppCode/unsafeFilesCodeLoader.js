@@ -1,4 +1,4 @@
-console.log('unsafe code loader worck');
+console.log('database code work');
 
 
 const filesToLoad = [chrome.runtime.getURL('databaseLoader/main.js')];

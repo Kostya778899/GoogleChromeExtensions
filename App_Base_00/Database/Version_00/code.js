@@ -1,4 +1,4 @@
-console.log('dynamically code of database worck');
+console.log('dynamically code of database work');
 
 
 alert('LAAAED!');
