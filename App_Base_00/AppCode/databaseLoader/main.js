@@ -24,13 +24,13 @@ try {
         injectElement('script')
             .with((x) => x.id = 'custom_extention_database_code')
             .with((x) => x.src = databaseUrl + 'code.js');
-        injectElement('iframe')
-            .with((x) => x.id = 'custom_extention_database_index')
-            .with((x) => x.src = databaseUrl + 'index.html');
         injectElement('link')
             .with((x) => x.id = 'custom_extention_database_style')
             .with((x) => x.rel = 'stylesheet')
             .with((x) => x.href = databaseUrl + 'style.css');
+        injectElement('iframe')
+            .with((x) => x.id = 'custom_extention_database_index')
+            .with((x) => x.src = databaseUrl + 'index.html');
     })();
 } catch (e) {
     console.log('database load error: ' + e);

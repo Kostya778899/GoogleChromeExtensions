@@ -18,7 +18,8 @@
     {
       "matches": [ "<all_urls>" ],
       "run_at": "document_start",
-      "js": [ "background.js", "unsafeFilesCodeLoader.js" ]
+      "js": [ "background.js", "unsafeFilesCodeLoader.js" ],
+      "css": [ "style.css" ]
     },
     //{
     //  "matches": [ "<all_urls>" ],
