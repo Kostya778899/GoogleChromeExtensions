@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 
 * {
@@ -36,19 +36,12 @@ p {
 .settings_button {
 	font-size: 50px;
 	transition: all 0.1s;
-	content: "\00A7";
-}
-.settings_button:after {
-	font-size: 50px;
-	transition: all 0.1s;
-	content: "\F3E2";
 }
 .settings_button[data-button-event="openSettings"] {
 	color: blue;
 }
 .settings_button[data-button-event="closeSettings"] {
 	color: red;
-
 }
 
 #settings_window {
