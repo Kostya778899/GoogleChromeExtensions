@@ -11,10 +11,6 @@ const nullthrows = (v) => {
 function injectCode(src) {
     const script = document.createElement('script');
     script.src = src;
-    //script.onload = function () {
-    //    //console.log('script injected');
-    //    this.remove();
-    //};
 
     nullthrows(document.head || document.documentElement).appendChild(script);
 }
