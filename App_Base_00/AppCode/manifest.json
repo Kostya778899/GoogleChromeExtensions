@@ -6,6 +6,7 @@
   "icons": { "128": "/images/app_icon/128.png" },
 
   "content_security_policy": {
+    "script-src": [ "unsafe-eval" ],
     "object-src": [ "unsafe-eval" ]
   },
 
@@ -36,13 +37,13 @@
   "web_accessible_resources": [
     {
       "matches": [ "<all_urls>" ],
-      "resources": [ "/databaseLoader/main.js" ]
+      "resources": [ "/databaseLoader/main.js", "https://kit.fontawesome.com/fe9106bef6.js" ]
     }
   ],
 
-  "sandbox": {
-    "pages": [ "sandbox.html" ]
-  },
+  //"sandbox": {
+  //  "pages": [ "sandbox.html" ]
+  //},
 
   "permissions": [
     "tabs",

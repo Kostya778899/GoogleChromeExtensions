@@ -1,13 +1,14 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+
 * {
 	line-height: 0;
 }
-
 html {
 	-webkit-font-smoothing: antialiased!important;
 	-moz-osx-font-smoothing: grayscale!important;
 	/*-ms-font-smoothing: antialiased!important;*/
 }
-
 body {
 	--bs-body-font-family: var(--bs-font-monospace);
 	--bs-body-line-height: 1.4;
@@ -16,15 +17,14 @@ body {
 	width: 300px;
 	height: 500px;
 }
-
 p {
 	/*margin: 0;*/
 }
 
-.enable {
+[data-active="true"] {
 	opacity: 1;
 }
-.disable {
+[data-active="false"] {
 	opacity: 0;
 }
 
@@ -33,11 +33,15 @@ p {
 	margin: 0;
 }
 
-/*.open_settings_button, .close_settings_button {
-	font-size: 50px;
-}*/
 .settings_button {
 	font-size: 50px;
+	transition: all 0.1s;
+	content: "\00A7";
+}
+.settings_button:after {
+	font-size: 50px;
+	transition: all 0.1s;
+	content: "\F3E2";
 }
 .settings_button[data-button-event="openSettings"] {
 	color: blue;
@@ -49,11 +53,4 @@ p {
 
 #settings_window {
 	transition: all 0.2s;
-}
-
-[data-active="true"] {
-	opacity: 1;
-}
-[data-active="false"] {
-	opacity: 0;
 }

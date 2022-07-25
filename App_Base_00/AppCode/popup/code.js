@@ -7,9 +7,9 @@ function tryReplaceArrayElement(array, oldElement, newElement) {
     return ~elementIndex ? (array[elementIndex] = newElement, true) : false;
 }
 
-function getEnabled(element) { return !element.classList.contains("disable"); }
-function setEnabled(element, value) { element.classList.toggle(("enable", "disable"), (value, !value)); }
-function executeIfEnabled(element, event) { return getEnabled(element) ? (event(), true) : false; }
+//function getEnabled(element) { return !element.classList.contains("disable"); }
+//function setEnabled(element, value) { element.classList.toggle(("enable", "disable"), (value, !value)); }
+//function executeIfEnabled(element, event) { return getEnabled(element) ? (event(), true) : false; }
 
 
 Object.assign(Object.prototype, { assign(value) { Object.assign(this.prototype, value); } });
@@ -30,11 +30,7 @@ logo.onclick = () => executeIfEnabled(logo, () => window.open("https://github.co
 
 //document.getElementsByDataAttribute("active").forEach((element) => element.);
 document.getElementsByClassName("settings_button").forEach((element) => element.onclick = () => {
-    if (element.hasAttribute("data-active") && !element.dataset.active) return;
+    if (element.hasAttribute("data-active") && !element.dataset.active.toBoolean()) return;
     settingsWindow.dataset.active = element.dataset.buttonEvent === "openSettings";
     element.dataset.buttonEvent = settingsWindow.dataset.active.toBoolean() ? "closeSettings" : "openSettings";
 });
-
-
-const poi = document.getElementById("POI");
-document.getElementById("POO").querySelectorAll("code").forEach((element) => poi.textContent += element.textContent);
