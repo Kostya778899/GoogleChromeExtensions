@@ -7,10 +7,6 @@ function tryReplaceArrayElement(array, oldElement, newElement) {
     return ~elementIndex ? (array[elementIndex] = newElement, true) : false;
 }
 
-//function getEnabled(element) { return !element.classList.contains("disable"); }
-//function setEnabled(element, value) { element.classList.toggle(("enable", "disable"), (value, !value)); }
-//function executeIfEnabled(element, event) { return getEnabled(element) ? (event(), true) : false; }
-
 
 Object.assign(Object.prototype, { assign(value) { Object.assign(this.prototype, value); } });
 
@@ -21,16 +17,19 @@ HTMLCollection.assign({ forEach(event) { Array.prototype.forEach.call(this, (ele
 }));
 
 
-//document.getElementsByClassName("enable").forEach((element) => setEnabled(element, true));
-//document.getElementsByClassName("disable").forEach((element) => setEnabled(element, false));
-
-//document.getElementsByDataAttribute("active").forEach((element) => element.);
-
 logo.onclick = () => executeIfEnabled(logo, () => window.open("https://github.com/Kostya778899"));
 
-//document.getElementsByDataAttribute("active").forEach((element) => element.);
-document.getElementsByClassName("settings_button").forEach((element) => element.onclick = () => {
-    if (element.hasAttribute("data-active") && !element.dataset.active.toBoolean()) return;
-    settingsWindow.dataset.active = element.dataset.buttonEvent === "openSettings";
-    element.dataset.buttonEvent = settingsWindow.dataset.active.toBoolean() ? "closeSettings" : "openSettings";
+document.querySelector('.settings_button .icon').contentWindow.postMessage(`
+document.head.innerHTML += '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">';
+text.start.innerHTML = '<i class="bi-airplane-engines-fill"></i>';
+text.end.innerHTML = '<i class="bi-archive-fill"></i>';
+
+`, '*');
+//document.querySelector('.text .start').classList.add('bi');
+//document.querySelector('.text .end').classList.add('bi bi-gear-fill');
+//document.getElementsByClassName('settings_button')[0].contents().find("body").on('click', function (event) { alert('test'); });
+document.getElementsByClassName('settings_button').forEach((element) => element.onclick = () => {
+    if (element.hasAttribute('data-active') && !element.dataset.active.toBoolean()) return;
+    settingsWindow.dataset.active = element.dataset.buttonEvent === 'openSettings';
+    element.dataset.buttonEvent = settingsWindow.dataset.active.toBoolean() ? 'closeSettings' : 'openSettings';
 });

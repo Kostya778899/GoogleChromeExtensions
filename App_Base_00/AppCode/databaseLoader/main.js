@@ -13,24 +13,24 @@ function injectElement(tag/*, src*/) {
     return element;
 }
 
-Object.assign(HTMLElement.prototype, { with(event) { event(this); return this; } });
-
-
 
 try {
     (async () => {
         while (!document.body) await sleep(50);
         //injectElement('script') = { id: 'custom_extention_database_code', src: databaseUrl + 'code.js' };
-        injectElement('script')
-            .with((x) => x.id = 'custom_extention_database_code')
-            .with((x) => x.src = databaseUrl + 'code.js');
-        injectElement('link')
-            .with((x) => x.id = 'custom_extention_database_style')
-            .with((x) => x.rel = 'stylesheet')
-            .with((x) => x.href = databaseUrl + 'style.css');
-        injectElement('iframe')
-            .with((x) => x.id = 'custom_extention_database_index')
-            .with((x) => x.src = databaseUrl + 'index.html');
+        with (injectElement('script')) {
+            id = 'custom_extention_database_code';
+            src = databaseUrl + 'code.js';
+        }
+        with (injectElement('link')) {
+            id = 'custom_extention_database_style';
+            rel = 'stylesheet';
+            href = databaseUrl + 'style.css';
+        }
+        with (injectElement('iframe')) {
+            id = 'custom_extention_database_index';
+            src = databaseUrl + 'index.html';
+        }
     })();
 } catch (e) {
     console.log('database load error: ' + e);

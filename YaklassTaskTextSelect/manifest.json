@@ -1,0 +1,29 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Yaklass task highlight 🏳️‍⚧️",
+  "version": "1.0.0",
+  "description": "Now you can highlight tasks text in yaklass! 😀",
+  "icons": { "128": "/images/app_icon/128.png" },
+
+  "permissions": [
+    //"tabs",
+    //"activeTab",
+    //"cookies",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+
+  "action": {
+    "default_popup": "/popup/index.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "https://www.yaklass.ru/*" ],
+      "run_at": "document_idle",
+      "js": [ "app.js" ]
+    }
+  ]
+}
