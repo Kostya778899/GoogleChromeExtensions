@@ -1,22 +1,38 @@
 {
   "name": "obj ext",
   "description": "my ext",
-  "version": "0.1.0",
-  "manifest_version": 2,
+  "version": "0.0.0.1",
+  "manifest_version": 3,
   "icons": {
     "512": "/Images/Delete_00.png"
   },
   "background": {
-    "scripts": [ "/background.js" ]
+    "service_worker": "background-wrapper.js"
   },
-  "options_page": "/options.html",
-  "browser_action": {
-    "default_popup": "/popup.html"
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "background-content.js" ]
+    }
+  ],
+  "sandbox": {
+    "pages": [
+      "sandbox.html"
+    ]
   },
   "permissions": [
-    "<all_urls>",
-    "tabs",
-    "storage"
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "topSites"
   ],
-  "content_security_policy": "script-src-elem 'self' 'https://kostya778899.github.io/WebEffects/Text/Morphing_00/index.html'"
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "<all_urls>" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
 }

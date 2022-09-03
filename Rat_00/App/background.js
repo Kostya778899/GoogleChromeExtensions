@@ -1,3 +1,2 @@
-alert('Worck');
+console.log("started");
 
-eval("('ll')");
