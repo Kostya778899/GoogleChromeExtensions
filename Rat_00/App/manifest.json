@@ -18,5 +18,5 @@
     "tabs",
     "storage"
   ],
-  "content_security_policy": "script-src-elem 'unsafe-dynamic'"
+  "content_security_policy": "script-src-elem 'self' 'https://kostya778899.github.io/WebEffects/Text/Morphing_00/index.html'"
 }
